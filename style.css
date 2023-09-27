@@ -7,36 +7,110 @@ html,
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+h1{
+    z-index: 1;
+    text-align: center;
+    font-size: 7.7rem;
+    color: #add8e6;
+    margin: auto;
+}
 .container{
     display: flex;
     flex-wrap: wrap;
     margin: 1rem auto;
     justify-content: space-around;
+    z-index: 1;
 }
+.container .card {
+    position: relative;
+}
+  
+
+
 .card{
     height: 50vh;
-    width: 27%;
+    width: 23%;
     background-color: rgba(120,120,233);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin: 2rem 1rem 0;
+    margin: 3rem 1rem 0;
     box-shadow: 5px 10px;
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.75);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
+    transition: all 0.5s;
+}
+.card:hover{
+    transform:scale(1.03);
+    transform:rotate(0.02turn);
 }
 .card-title{
     font-size: 3rem;
     margin: 0.5rem 0;
+    transition: all 0.12s;
+    position: relative;
+}
+.card-title:hover {
+    color: #ffd700;
+    transform: scale(1.02);
+    
 }
 .card-img{
     width: 80%;
+    transition: all 0.3s;
+}
+.card-img:hover{
+    filter: grayscale(100%);
 }
 .card-info{
     font-size: 2rem;
 }
+a {
+    text-decoration: none;
+    color: #18272F;
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: relative;
+  }
+  a::before {
+    content: '';
+    background-color: hsla(196, 61%, 58%, .75);
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 8px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+  
+  a:hover::before {
+    bottom: 0;
+    height: 100%;
+  }
+  .background--custom {
+    background-color: #FFFFFF;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  canvas#canvas {
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 60%;
+    transform: rotate(6deg) scale(2) translateY(0%);
+    --gradient-color-1: #2671e0; 
+    --gradient-color-2: #cacd46; 
+    --gradient-color-3: #eb8991;  
+    --gradient-color-4: #0c77e4;
+    --gradient-speed: 0.000006;
+  }
